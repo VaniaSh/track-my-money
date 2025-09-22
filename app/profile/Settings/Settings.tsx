@@ -38,24 +38,6 @@ const SettingsScreen = () => {
       onPress: () => Alert.alert('Privacy', 'Privacy settings coming soon!'),
     },
     {
-      id: 'data',
-      title: 'Data & Storage',
-      description: 'Manage your data and storage settings',
-      icon: 'server',
-      disabled: false,
-      type: 'navigation',
-      onPress: () => Alert.alert('Data', 'Data settings coming soon!'),
-    },
-    {
-      id: 'backup',
-      title: 'Backup & Sync',
-      description: 'Backup your data to the cloud',
-      icon: 'cloud-upload',
-      disabled: false,
-      type: 'navigation',
-      onPress: () => Alert.alert('Backup', 'Backup settings coming soon!'),
-    },
-    {
       id: 'help',
       title: 'Help & Support',
       description: 'Get help and contact support',
@@ -63,15 +45,6 @@ const SettingsScreen = () => {
       disabled: false,
       type: 'navigation',
       onPress: () => Alert.alert('Help', 'Help center coming soon!'),
-    },
-    {
-      id: 'about',
-      title: 'About',
-      description: 'App version and information',
-      icon: 'information-circle',
-      disabled: false,
-      type: 'navigation',
-      onPress: () => Alert.alert('About', 'TrackMyMoney v1.0.0'),
     },
   ];
 
@@ -89,14 +62,14 @@ const SettingsScreen = () => {
 
       <View style={styles.section}>
         <Text style={[styles.sectionTitle, { color: colors.onSurface }]}>Privacy & Security</Text>
-        {settingsOptions.slice(2, 5).map(el => (
+        {settingsOptions.slice(2, 3).map(el => (
           <ProfileItem key={el.id} {...el} />
         ))}
       </View>
 
       <View style={styles.section}>
         <Text style={[styles.sectionTitle, { color: colors.onSurface }]}>Support</Text>
-        {settingsOptions.slice(5).map(el => (
+        {settingsOptions.slice(3).map(el => (
           <ProfileItem key={el.id} {...el} />
         ))}
       </View>
