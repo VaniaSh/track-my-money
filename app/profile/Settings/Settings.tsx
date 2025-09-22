@@ -1,13 +1,8 @@
-import ProfileItem from "@/components/ui/ProfileItem/ProfileItem";
+import ProfileItem from '@/components/ui/ProfileItem/ProfileItem';
 import { ProfileOption } from '@/components/ui/ProfileItem/types';
 import { useTheme } from '@/contexts/ThemeContext';
 import React from 'react';
-import {
-    Alert,
-    ScrollView,
-    Text,
-    View,
-} from 'react-native';
+import { Alert, ScrollView, Text, View } from 'react-native';
 import { styles } from './styles';
 
 const SettingsScreen = () => {
@@ -87,19 +82,23 @@ const SettingsScreen = () => {
     >
       <View style={styles.section}>
         <Text style={[styles.sectionTitle, { color: colors.onSurface }]}>General</Text>
-        {settingsOptions.slice(0, 2).map((el) => <ProfileItem key={el.id} {...el} />)}
+        {settingsOptions.slice(0, 2).map(el => (
+          <ProfileItem key={el.id} {...el} />
+        ))}
       </View>
 
       <View style={styles.section}>
         <Text style={[styles.sectionTitle, { color: colors.onSurface }]}>Privacy & Security</Text>
-        {settingsOptions.slice(2, 5).map((el) => <ProfileItem key={el.id} {...el} />)}
-
+        {settingsOptions.slice(2, 5).map(el => (
+          <ProfileItem key={el.id} {...el} />
+        ))}
       </View>
 
       <View style={styles.section}>
         <Text style={[styles.sectionTitle, { color: colors.onSurface }]}>Support</Text>
-        {settingsOptions.slice(5).map((el) => <ProfileItem key={el.id} {...el} />)}
-
+        {settingsOptions.slice(5).map(el => (
+          <ProfileItem key={el.id} {...el} />
+        ))}
       </View>
 
       <View style={{ height: 20 }} />

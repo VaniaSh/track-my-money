@@ -1,13 +1,11 @@
-import { Header } from "@/components/ui";
+import { Header } from '@/components/ui';
 import { useTheme } from '@/contexts/ThemeContext';
-import { Ionicons } from "@expo/vector-icons";
-import { Tabs, useRouter } from 'expo-router';
+import { Ionicons } from '@expo/vector-icons';
+import { Tabs } from 'expo-router';
 import React from 'react';
-import { TouchableOpacity } from 'react-native';
 
 export default function TabLayout() {
   const { colors } = useTheme();
-  const router = useRouter();
 
   return (
     <Tabs
@@ -24,29 +22,36 @@ export default function TabLayout() {
           shadowRadius: 8,
         },
         headerShown: true,
-      }}>
+      }}
+    >
       <Tabs.Screen
-        name="index"
+        name='index'
         options={{
           title: 'Home',
-          tabBarIcon: ({ color, focused }) => <Ionicons name={focused ? 'home' : 'home-outline'} size={20} color={color} />,
-          header: () => <Header title="Home" showProfileButton />
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons name={focused ? 'home' : 'home-outline'} size={20} color={color} />
+          ),
+          header: () => <Header title='Home' showProfileButton />,
         }}
       />
       <Tabs.Screen
-        name="search"
+        name='search'
         options={{
           title: 'Search',
-          tabBarIcon: ({ color, focused }) => <Ionicons name={focused ? 'search' : 'search-outline'} size={20} color={color} />,
-          header: () => <Header title="Search" />
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons name={focused ? 'search' : 'search-outline'} size={20} color={color} />
+          ),
+          header: () => <Header title='Search' showProfileButton />,
         }}
       />
       <Tabs.Screen
-        name="analytics"
+        name='analytics'
         options={{
           title: 'Analytics',
-          tabBarIcon: ({ color, focused }) => <Ionicons name={focused ? 'analytics' : 'analytics-outline'} size={20} color={color} />,
-          header: () => <Header title="Analytics" />
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons name={focused ? 'analytics' : 'analytics-outline'} size={20} color={color} />
+          ),
+          header: () => <Header title='Analytics' showProfileButton />,
         }}
       />
     </Tabs>

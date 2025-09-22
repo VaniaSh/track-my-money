@@ -3,18 +3,15 @@ import { RewardData } from '@/components/ui/Reward/types';
 import { useTheme } from '@/contexts/ThemeContext';
 import { Ionicons } from '@expo/vector-icons';
 import React, { useState } from 'react';
-import {
-    Alert,
-    ScrollView,
-    Text,
-    TouchableOpacity,
-    View,
-} from 'react-native';
+import { Alert, ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import { styles } from './styles';
 
 const Rewards = () => {
   const { colors } = useTheme();
-  const [activeRewards, setActiveRewards] = useState<string[]>(['first-transaction', 'budget-goal']);
+  const [activeRewards, setActiveRewards] = useState<string[]>([
+    'first-transaction',
+    'budget-goal',
+  ]);
 
   const rewardsData: RewardData[] = [
     {
@@ -74,27 +71,15 @@ const Rewards = () => {
   ];
 
   const handleRewardPress = (rewardId: string) => {
-    Alert.alert(
-      'Reward Claimed!',
-      `You've earned points for completing this achievement!`,
-      [
-        {
-          text: 'Awesome!',
-          onPress: () => {
-            // Here you would typically claim the reward
-            console.log(`Reward ${rewardId} claimed!`);
-          },
+    Alert.alert('Reward Claimed!', `You've earned points for completing this achievement!`, [
+      {
+        text: 'Awesome!',
+        onPress: () => {
+          // Here you would typically claim the reward
+          console.log(`Reward ${rewardId} claimed!`);
         },
-      ]
-    );
-  };
-
-  const toggleReward = (rewardId: string) => {
-    setActiveRewards(prev => 
-      prev.includes(rewardId) 
-        ? prev.filter(id => id !== rewardId)
-        : [...prev, rewardId]
-    );
+      },
+    ]);
   };
 
   const activeRewardsCount = activeRewards.length;
@@ -110,39 +95,29 @@ const Rewards = () => {
       {/* Header Stats */}
       <View style={[styles.headerStats, { backgroundColor: colors.primary }]}>
         <View style={styles.statItem}>
-          <Text style={[styles.statValue, { color: colors.onPrimary }]}>
-            {activeRewardsCount}
-          </Text>
-          <Text style={[styles.statLabel, { color: colors.onPrimary + 'CC' }]}>
-            Active Rewards
-          </Text>
+          <Text style={[styles.statValue, { color: colors.onPrimary }]}>{activeRewardsCount}</Text>
+          <Text style={[styles.statLabel, { color: `${colors.onPrimary}CC` }]}>Active Rewards</Text>
         </View>
-        <View style={[styles.statDivider, { backgroundColor: colors.onPrimary + '30' }]} />
+        <View style={[styles.statDivider, { backgroundColor: `${colors.onPrimary}30` }]} />
         <View style={styles.statItem}>
-          <Text style={[styles.statValue, { color: colors.onPrimary }]}>
-            {totalPoints}
-          </Text>
-          <Text style={[styles.statLabel, { color: colors.onPrimary + 'CC' }]}>
-            Total Points
-          </Text>
+          <Text style={[styles.statValue, { color: colors.onPrimary }]}>{totalPoints}</Text>
+          <Text style={[styles.statLabel, { color: `${colors.onPrimary}CC` }]}>Total Points</Text>
         </View>
       </View>
 
       {/* Rewards List */}
       <View style={styles.section}>
         <View style={styles.sectionHeader}>
-          <Text style={[styles.sectionTitle, { color: colors.onSurface }]}>
-            Available Rewards
-          </Text>
+          <Text style={[styles.sectionTitle, { color: colors.onSurface }]}>Available Rewards</Text>
           <TouchableOpacity
-            style={[styles.toggleButton, { backgroundColor: colors.primary + '20' }]}
+            style={[styles.toggleButton, { backgroundColor: `${colors.primary}20` }]}
             onPress={() => Alert.alert('Toggle Mode', 'Toggle rewards on/off for testing')}
           >
-            <Ionicons name="settings" size={20} color={colors.primary} />
+            <Ionicons name='settings' size={20} color={colors.primary} />
           </TouchableOpacity>
         </View>
 
-        {rewardsData.map((reward) => (
+        {rewardsData.map(reward => (
           <Reward
             key={reward.id}
             id={reward.id}
@@ -158,27 +133,27 @@ const Rewards = () => {
 
       {/* Quick Actions */}
       <View style={styles.section}>
-        <Text style={[styles.sectionTitle, { color: colors.onSurface }]}>
-          Quick Actions
-        </Text>
+        <Text style={[styles.sectionTitle, { color: colors.onSurface }]}>Quick Actions</Text>
         <View style={styles.quickActions}>
           <TouchableOpacity
-            style={[styles.quickAction, { backgroundColor: colors.surface, borderColor: colors.border }]}
+            style={[
+              styles.quickAction,
+              { backgroundColor: colors.surface, borderColor: colors.border },
+            ]}
             onPress={() => setActiveRewards(rewardsData.map(r => r.id))}
           >
-            <Ionicons name="lock-open" size={24} color={colors.primary} />
-            <Text style={[styles.quickActionText, { color: colors.onSurface }]}>
-              Unlock All
-            </Text>
+            <Ionicons name='lock-open' size={24} color={colors.primary} />
+            <Text style={[styles.quickActionText, { color: colors.onSurface }]}>Unlock All</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            style={[styles.quickAction, { backgroundColor: colors.surface, borderColor: colors.border }]}
+            style={[
+              styles.quickAction,
+              { backgroundColor: colors.surface, borderColor: colors.border },
+            ]}
             onPress={() => setActiveRewards([])}
           >
-            <Ionicons name="lock-closed" size={24} color={colors.primary} />
-            <Text style={[styles.quickActionText, { color: colors.onSurface }]}>
-              Lock All
-            </Text>
+            <Ionicons name='lock-closed' size={24} color={colors.primary} />
+            <Text style={[styles.quickActionText, { color: colors.onSurface }]}>Lock All</Text>
           </TouchableOpacity>
         </View>
       </View>

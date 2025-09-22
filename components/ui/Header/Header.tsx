@@ -5,27 +5,22 @@ import { Text, TouchableOpacity, View } from 'react-native';
 
 import { Ionicons } from '@expo/vector-icons';
 
-import Animated, {
-  useAnimatedStyle,
-  useSharedValue,
-  withSpring,
-} from 'react-native-reanimated';
+import Animated, { useAnimatedStyle, useSharedValue, withSpring } from 'react-native-reanimated';
 
 import { useTheme } from '@/contexts/ThemeContext';
-import { useRouter } from "expo-router";
+import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { HeaderProps } from "./types";
+import { HeaderProps } from './types';
 
-const AnimatedTouchableOpacity =
-  Animated.createAnimatedComponent(TouchableOpacity);
+const AnimatedTouchableOpacity = Animated.createAnimatedComponent(TouchableOpacity);
 
 export const Header = ({
-                         title = 'Screen',
-                         showBackButton = false,
-                         rightAction,
-                         showProfileButton = false,
-                         onProfilePress,
-                       }: HeaderProps) => {
+  title = 'Screen',
+  showBackButton = false,
+  rightAction,
+  showProfileButton = false,
+  onProfilePress: _onProfilePress,
+}: HeaderProps) => {
   const scaleValue = useSharedValue(1);
   const { top } = useSafeAreaInsets();
   const route = useRouter();
@@ -44,12 +39,7 @@ export const Header = ({
 
   return (
     <>
-      <View
-        style={[
-          styles.container,
-          { backgroundColor: colors.primary, paddingTop: top },
-        ]}
-      >
+      <View style={[styles.container, { backgroundColor: colors.primary, paddingTop: top }]}>
         <View style={styles.content}>
           <View style={styles.leftSection}>
             {showBackButton && (
@@ -58,20 +48,13 @@ export const Header = ({
                 onPress={() => route.back()}
                 activeOpacity={0.7}
               >
-                <Ionicons
-                  name='arrow-back'
-                  size={24}
-                  color={colors.onPrimary}
-                />
+                <Ionicons name='arrow-back' size={24} color={colors.onPrimary} />
               </AnimatedTouchableOpacity>
             )}
           </View>
 
           <View style={styles.centerSection}>
-            <Text
-              style={[styles.title, { color: colors.onPrimary }]}
-              numberOfLines={1}
-            >
+            <Text style={[styles.title, { color: colors.onPrimary }]} numberOfLines={1}>
               {title}
             </Text>
           </View>
@@ -83,11 +66,7 @@ export const Header = ({
                 onPress={() => route.push('/profile')}
                 activeOpacity={0.7}
               >
-                <Ionicons
-                  name='person-outline'
-                  size={24}
-                  color={colors.onPrimary}
-                />
+                <Ionicons name='person-outline' size={24} color={colors.onPrimary} />
               </AnimatedTouchableOpacity>
             )}
             {rightAction && (
@@ -96,11 +75,7 @@ export const Header = ({
                 onPress={() => handlePress(rightAction.onPress)}
                 activeOpacity={0.7}
               >
-                <Ionicons
-                  name={rightAction.icon as any}
-                  size={24}
-                  color={colors.onPrimary}
-                />
+                <Ionicons name={rightAction.icon as any} size={24} color={colors.onPrimary} />
               </AnimatedTouchableOpacity>
             )}
           </View>

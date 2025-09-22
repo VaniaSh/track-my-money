@@ -1,18 +1,11 @@
+import ProfileItem from '@/components/ui/ProfileItem/ProfileItem';
+import { ProfileOption } from '@/components/ui/ProfileItem/types';
 import { useTheme } from '@/contexts/ThemeContext';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import React from 'react';
-import {
-    Alert,
-    ScrollView,
-    Switch,
-    Text,
-    TouchableOpacity,
-    View
-} from 'react-native';
+import { Alert, ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import { styles } from './styles';
-import {ProfileOption} from "@/components/ui/ProfileItem/types";
-import ProfileItem from "@/components/ui/ProfileItem/ProfileItem";
 
 const Profile = () => {
   const { colors, toggleTheme, isDark } = useTheme();
@@ -52,7 +45,6 @@ const Profile = () => {
       isActive: false,
     },
   ];
-
 
   const profileOptions: ProfileOption[] = [
     {
@@ -110,19 +102,15 @@ const Profile = () => {
     >
       <View style={[styles.userBlock, { backgroundColor: colors.surface }]}>
         <View style={styles.userInfo}>
-          <View style={[styles.userAvatar, { backgroundColor: colors.primary + '20' }]}>
-            <Ionicons name="person" size={32} color={colors.primary} />
+          <View style={[styles.userAvatar, { backgroundColor: `${colors.primary}20` }]}>
+            <Ionicons name='person' size={32} color={colors.primary} />
           </View>
           <View style={styles.userDetails}>
-            <Text style={[styles.userName, { color: colors.onSurface }]}>
-              John Doe
-            </Text>
+            <Text style={[styles.userName, { color: colors.onSurface }]}>John Doe</Text>
             <Text style={[styles.userEmail, { color: colors.textSecondary }]}>
               john.doe@example.com
             </Text>
-            <Text style={[styles.userStatus, { color: colors.primary }]}>
-              Premium Member
-            </Text>
+            <Text style={[styles.userStatus, { color: colors.primary }]}>Premium Member</Text>
           </View>
         </View>
       </View>
@@ -136,22 +124,23 @@ const Profile = () => {
       >
         <View style={styles.rewardsHeader}>
           <View style={styles.rewardsTitleContainer}>
-            <Ionicons name="gift" size={24} color={colors.primary} />
+            <Ionicons name='gift' size={24} color={colors.primary} />
             <Text style={[styles.rewardsTitle, { color: colors.onSurface }]}>Rewards</Text>
           </View>
-          <Ionicons name="chevron-forward" size={20} color={colors.textSecondary} />
+          <Ionicons name='chevron-forward' size={20} color={colors.textSecondary} />
         </View>
 
         <View style={styles.rewardsProgressContainer}>
           <View style={styles.rewardsProgressInfo}>
             <Text style={[styles.rewardsProgressText, { color: colors.textSecondary }]}>
-              {sampleRewards.filter(reward => reward.isActive).length} of {sampleRewards.length} rewards unlocked
+              {sampleRewards.filter(reward => reward.isActive).length} of {sampleRewards.length}{' '}
+              rewards unlocked
             </Text>
             <Text style={[styles.rewardsPointsText, { color: colors.primary }]}>
               {sampleRewards
                 .filter(reward => reward.isActive)
-                .reduce((sum, reward) => sum + reward.points, 0)
-              } points earned
+                .reduce((sum, reward) => sum + reward.points, 0)}{' '}
+              points earned
             </Text>
           </View>
 
@@ -161,28 +150,34 @@ const Profile = () => {
                 styles.progressFill,
                 {
                   backgroundColor: colors.primary,
-                  width: `${(sampleRewards.filter(reward => reward.isActive).length / sampleRewards.length) * 100}%`
-                }
+                  width: `${(sampleRewards.filter(reward => reward.isActive).length / sampleRewards.length) * 100}%`,
+                },
               ]}
             />
           </View>
         </View>
       </TouchableOpacity>
 
-
       <View style={styles.section}>
         <Text style={[styles.sectionTitle, { color: colors.onSurface }]}>Settings</Text>
-        {profileOptions.map((value) => <ProfileItem key={value.id} {...value} />)}
+        {profileOptions.map(value => (
+          <ProfileItem key={value.id} {...value} />
+        ))}
       </View>
 
       <TouchableOpacity
-        style={[styles.logoutButton, { backgroundColor: colors.error + '20', borderColor: colors.error }]}
-        onPress={() => Alert.alert('Logout', 'Are you sure you want to logout?', [
-          { text: 'Cancel', style: 'cancel' },
-          { text: 'Logout', style: 'destructive', onPress: () => console.log('Logout') }
-        ])}
+        style={[
+          styles.logoutButton,
+          { backgroundColor: `${colors.error}20`, borderColor: colors.error },
+        ]}
+        onPress={() =>
+          Alert.alert('Logout', 'Are you sure you want to logout?', [
+            { text: 'Cancel', style: 'cancel' },
+            { text: 'Logout', style: 'destructive', onPress: () => console.log('Logout') },
+          ])
+        }
       >
-        <Ionicons name="log-out" size={24} color={colors.error} />
+        <Ionicons name='log-out' size={24} color={colors.error} />
         <Text style={[styles.logoutText, { color: colors.error }]}>Logout</Text>
       </TouchableOpacity>
 

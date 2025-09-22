@@ -1,9 +1,7 @@
-import {View} from "react-native";
+import { View } from 'react-native';
 
-const Auth = ()=> {
-  return (
-    <View></View>
-  )
-}
+const Auth = () => {
+  return <View></View>;
+};
 
 export default Auth;

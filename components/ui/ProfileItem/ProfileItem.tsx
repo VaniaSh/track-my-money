@@ -1,12 +1,12 @@
 import React from 'react';
-import {Switch, Text, TouchableOpacity, View} from "react-native";
-import {Ionicons} from "@expo/vector-icons";
-import { styles } from './styles'
-import {ProfileOption} from "@/components/ui/ProfileItem/types";
-import {useTheme} from "@/contexts/ThemeContext";
+import { Switch, Text, TouchableOpacity, View } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+import { styles } from './styles';
+import { ProfileOption } from '@/components/ui/ProfileItem/types';
+import { useTheme } from '@/contexts/ThemeContext';
 
-const ProfileItem = ({...props}: ProfileOption) => {
-  const {id, onPress, disabled, title, icon, value, type, description  } = props;
+const ProfileItem = ({ ...props }: ProfileOption) => {
+  const { id, onPress, disabled, title, icon, value, type, description } = props;
 
   const { colors } = useTheme();
 
@@ -19,13 +19,11 @@ const ProfileItem = ({...props}: ProfileOption) => {
       activeOpacity={0.7}
     >
       <View style={styles.optionLeft}>
-        <View style={[styles.iconContainer, { backgroundColor: colors.primary + '20' }]}>
+        <View style={[styles.iconContainer, { backgroundColor: `${colors.primary}20` }]}>
           <Ionicons name={icon as any} size={24} color={colors.primary} />
         </View>
         <View style={styles.optionText}>
-          <Text style={[styles.optionTitle, { color: colors.onSurface }]}>
-            {title}
-          </Text>
+          <Text style={[styles.optionTitle, { color: colors.onSurface }]}>{title}</Text>
           {description && (
             <Text style={[styles.optionDescription, { color: colors.textSecondary }]}>
               {description}
@@ -42,7 +40,7 @@ const ProfileItem = ({...props}: ProfileOption) => {
             thumbColor={value ? colors.onPrimary : colors.surfaceVariant}
           />
         ) : (
-          <Ionicons name="chevron-forward" size={20} color={colors.textSecondary} />
+          <Ionicons name='chevron-forward' size={20} color={colors.textSecondary} />
         )}
       </View>
     </TouchableOpacity>

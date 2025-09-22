@@ -4,7 +4,7 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  
+
   // Header Stats
   headerStats: {
     flexDirection: 'row',
@@ -23,48 +23,48 @@ export const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 4,
   },
-  
+
   statItem: {
     flex: 1,
     alignItems: 'center',
   },
-  
+
   statValue: {
     fontSize: 24,
     fontWeight: '700',
     marginBottom: 4,
   },
-  
+
   statLabel: {
     fontSize: 14,
     fontWeight: '500',
     textAlign: 'center',
   },
-  
+
   statDivider: {
     width: 1,
     height: 50,
     marginHorizontal: 16,
   },
-  
+
   // Section
   section: {
     marginHorizontal: 20,
     marginBottom: 24,
   },
-  
+
   sectionHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
     marginBottom: 16,
   },
-  
+
   sectionTitle: {
     fontSize: 20,
     fontWeight: '600',
   },
-  
+
   toggleButton: {
     width: 40,
     height: 40,
@@ -72,14 +72,14 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  
+
   // Quick Actions
   quickActions: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginTop: 8,
   },
-  
+
   quickAction: {
     flex: 1,
     alignItems: 'center',
@@ -97,7 +97,7 @@ export const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 2,
   },
-  
+
   quickActionText: {
     fontSize: 12,
     fontWeight: '600',

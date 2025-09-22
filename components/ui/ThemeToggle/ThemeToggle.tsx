@@ -17,11 +17,7 @@ export const ThemeToggle: React.FC<ThemeToggleProps> = ({ size = 24 }) => {
       onPress={toggleTheme}
       activeOpacity={0.7}
     >
-      <Ionicons
-        name={isDark ? 'sunny' : 'moon'}
-        size={size}
-        color={colors.primary}
-      />
+      <Ionicons name={isDark ? 'sunny' : 'moon'} size={size} color={colors.primary} />
     </TouchableOpacity>
   );
 };

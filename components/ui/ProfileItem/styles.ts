@@ -52,4 +52,4 @@ export const styles = StyleSheet.create({
   optionRight: {
     marginLeft: 12,
   },
-})
+});

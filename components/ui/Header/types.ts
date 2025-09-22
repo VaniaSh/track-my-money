@@ -10,4 +10,4 @@ export type HeaderProps = {
   rightSection?: ReactNode;
   showProfileButton?: boolean;
   onProfilePress?: () => void;
-}
+};

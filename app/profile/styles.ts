@@ -118,7 +118,6 @@ export const styles = StyleSheet.create({
     borderColor: 'rgba(255, 255, 255, 0.3)',
   },
 
-
   memberSince: {
     fontSize: 14,
     fontWeight: '400',
@@ -458,7 +457,6 @@ export const styles = StyleSheet.create({
   },
 
   // Rewards Screen Styles
-
 
   // Edit Profile Styles
   profilePictureContainer: {

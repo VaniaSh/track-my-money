@@ -33,7 +33,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   const isDark = colorScheme === 'dark';
 
   const toggleTheme = () => {
-    setColorScheme(prev => prev === 'light' ? 'dark' : 'light');
+    setColorScheme(prev => (prev === 'light' ? 'dark' : 'light'));
   };
 
   const setTheme = (theme: ColorScheme) => {
@@ -48,11 +48,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     isDark,
   };
 
-  return (
-    <ThemeContext.Provider value={value}>
-      {children}
-    </ThemeContext.Provider>
-  );
+  return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
 };
 
 export const useTheme = (): ThemeContextType => {

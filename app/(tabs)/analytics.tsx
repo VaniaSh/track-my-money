@@ -1,4 +1,4 @@
-import { View, Text} from 'react-native';
+import { View, Text } from 'react-native';
 
 const AnalyticsScreen = () => {
   return (
@@ -6,5 +6,5 @@ const AnalyticsScreen = () => {
       <Text>123</Text>
     </View>
   );
-}
+};
 export default AnalyticsScreen;

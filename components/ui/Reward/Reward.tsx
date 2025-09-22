@@ -7,7 +7,7 @@ import { styles } from './styles';
 import { RewardProps } from './types';
 
 export const Reward: React.FC<RewardProps> = ({
-  id,
+  id: _id,
   title,
   description,
   points,
@@ -46,9 +46,7 @@ export const Reward: React.FC<RewardProps> = ({
           style={[
             styles.rewardIcon,
             {
-              backgroundColor: isActive 
-                ? colors.primary + '20' 
-                : colors.textSecondary + '20',
+              backgroundColor: isActive ? `${colors.primary}20` : `${colors.textSecondary}20`,
             },
           ]}
         >
@@ -85,33 +83,12 @@ export const Reward: React.FC<RewardProps> = ({
       </View>
       <View style={styles.rewardRight}>
         {isActive ? (
-          <View
-            style={[
-              styles.rewardPoints,
-              { backgroundColor: colors.primary },
-            ]}
-          >
-            <Text
-              style={[
-                styles.pointsText,
-                { color: colors.onPrimary },
-              ]}
-            >
-              +{points}
-            </Text>
+          <View style={[styles.rewardPoints, { backgroundColor: colors.primary }]}>
+            <Text style={[styles.pointsText, { color: colors.onPrimary }]}>+{points}</Text>
           </View>
         ) : (
-          <View
-            style={[
-              styles.lockedIcon,
-              { backgroundColor: colors.textSecondary + '20' },
-            ]}
-          >
-            <Ionicons
-              name="lock-closed"
-              size={16}
-              color={colors.textSecondary}
-            />
+          <View style={[styles.lockedIcon, { backgroundColor: `${colors.textSecondary}20` }]}>
+            <Ionicons name='lock-closed' size={16} color={colors.textSecondary} />
           </View>
         )}
       </View>

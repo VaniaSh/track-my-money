@@ -49,6 +49,9 @@ export const Colors = {
     textTertiary: '#697565',
     textDisabled: '#9E9E9E',
 
+    // Additional text colors for Text component
+    onTertiary: '#ECDFCC',
+
     // Border and divider colors
     border: '#E0E0E0',
     divider: '#D9E9CF',
@@ -109,6 +112,9 @@ export const Colors = {
     textTertiary: '#8A9A85',
     textDisabled: '#5A6B5A',
 
+    // Additional text colors for Text component
+    onTertiary: '#181C14',
+
     // Border and divider colors
     border: '#2E2F2A',
     divider: '#3C3D37',
@@ -127,7 +133,7 @@ export const Colors = {
     pressed: 'rgba(105, 117, 101, 0.16)',
     focus: 'rgba(105, 117, 101, 0.20)',
     selected: 'rgba(105, 117, 101, 0.24)',
-  }
+  },
 };
 
 export const Fonts = Platform.select({

@@ -16,4 +16,4 @@ export const styles = StyleSheet.create({
     marginBottom: 16,
     marginLeft: 4,
   },
-})
+});

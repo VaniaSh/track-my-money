@@ -18,13 +18,13 @@ export const styles = StyleSheet.create({
     shadowOpacity: 0.05,
     shadowRadius: 2,
   },
-  
+
   rewardLeft: {
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
   },
-  
+
   rewardIcon: {
     width: 36,
     height: 36,
@@ -33,26 +33,26 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     marginRight: 12,
   },
-  
+
   rewardInfo: {
     flex: 1,
   },
-  
+
   rewardTitle: {
     fontSize: 16,
     fontWeight: '600',
     marginBottom: 2,
   },
-  
+
   rewardDescription: {
     fontSize: 12,
     fontWeight: '400',
   },
-  
+
   rewardRight: {
     marginLeft: 12,
   },
-  
+
   rewardPoints: {
     paddingHorizontal: 12,
     paddingVertical: 6,
@@ -60,12 +60,12 @@ export const styles = StyleSheet.create({
     minWidth: 50,
     alignItems: 'center',
   },
-  
+
   pointsText: {
     fontSize: 14,
     fontWeight: '700',
   },
-  
+
   lockedIcon: {
     width: 32,
     height: 32,
