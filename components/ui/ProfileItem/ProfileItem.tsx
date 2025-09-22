@@ -38,8 +38,8 @@ const ProfileItem = ({...props}: ProfileOption) => {
           <Switch
             value={value}
             onValueChange={onPress}
-            trackColor={{ false: colors.border, true: colors.primary }}
-            thumbColor={value ? colors.onPrimary : colors.textSecondary}
+            trackColor={{ false: colors.onBackground, true: colors.primary }}
+            thumbColor={value ? colors.onPrimary : colors.surfaceVariant}
           />
         ) : (
           <Ionicons name="chevron-forward" size={20} color={colors.textSecondary} />

@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 import { styles } from './styles';
 import {ProfileOption} from "@/components/ui/ProfileItem/types";
+import ProfileItem from "@/components/ui/ProfileItem/ProfileItem";
 
 const Profile = () => {
   const { colors, toggleTheme, isDark } = useTheme();
@@ -102,45 +103,6 @@ const Profile = () => {
     },
   ];
 
-  const renderProfileOption = (option: ProfileOption) => (
-    <TouchableOpacity
-      key={option.id}
-      style={[styles.optionItem, { backgroundColor: colors.surface, borderColor: colors.border }]}
-      onPress={option.onPress}
-      disabled={option.disabled}
-      activeOpacity={0.7}
-    >
-      <View style={styles.optionLeft}>
-        <View style={[styles.iconContainer, { backgroundColor: colors.primary + '20' }]}>
-          <Ionicons name={option.icon as any} size={24} color={colors.primary} />
-        </View>
-        <View style={styles.optionText}>
-          <Text style={[styles.optionTitle, { color: colors.onSurface }]}>
-            {option.title}
-          </Text>
-          {option.description && (
-            <Text style={[styles.optionDescription, { color: colors.textSecondary }]}>
-              {option.description}
-            </Text>
-          )}
-        </View>
-      </View>
-      <View style={styles.optionRight}>
-        {option.type === 'toggle' ? (
-          <Switch
-            value={option.value}
-            onValueChange={option.onPress}
-            trackColor={{ false: colors.border, true: colors.primary }}
-            thumbColor={option.value ? colors.onPrimary : colors.textSecondary}
-          />
-        ) : (
-          <Ionicons name="chevron-forward" size={20} color={colors.textSecondary} />
-        )}
-      </View>
-    </TouchableOpacity>
-  );
-
-
   return (
     <ScrollView
       style={[styles.container, { backgroundColor: colors.background }]}
@@ -210,7 +172,7 @@ const Profile = () => {
 
       <View style={styles.section}>
         <Text style={[styles.sectionTitle, { color: colors.onSurface }]}>Settings</Text>
-        {profileOptions.map(renderProfileOption)}
+        {profileOptions.map((value) => <ProfileItem key={value.id} {...value} />)}
       </View>
 
       <TouchableOpacity
