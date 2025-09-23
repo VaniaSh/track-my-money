@@ -1,7 +1,7 @@
 export interface CategoryItem {
   id: string;
   name: string;
-  icon: string;
+  icon: keyof typeof import('@expo/vector-icons').Ionicons.glyphMap;
   color?: string;
 }
 

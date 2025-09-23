@@ -3,8 +3,9 @@ import React from 'react';
 import { SectionList, View } from 'react-native';
 import { Text } from '../Text/Text';
 import { TransactionItem } from '../TransactionItem/TransactionItem';
+import { Transaction } from '../TransactionItem/types';
 import { styles } from './styles';
-import { Transaction, TransactionSectionListProps } from './types';
+import { TransactionSectionListProps } from './types';
 
 export const TransactionSectionList = ({
   sections,
