@@ -4,6 +4,7 @@ import { ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
 
 import { Ionicons } from '@expo/vector-icons';
 
+import { useRouter } from 'expo-router';
 import Animated, { FadeInRight, FadeInUp } from 'react-native-reanimated';
 
 import { Card, EmptyState, Text } from '@/components';
@@ -38,6 +39,7 @@ interface Transaction {
 
 const Home = () => {
   const { colors } = useTheme();
+  const router = useRouter();
   const [balance] = useState(8000);
   const [recentTransactions] = useState<Transaction[]>([]);
 
@@ -207,7 +209,7 @@ const Home = () => {
                   title='No transactions yet'
                   description='Start tracking your money by adding your first transaction'
                   actionText='Add Transaction'
-                  onActionPress={() => console.log('Add transaction')}
+                  onActionPress={() => router.push('/add-transaction')}
                   style={styles.emptyState}
                 />
               )}
@@ -219,7 +221,7 @@ const Home = () => {
       {/* Floating Action Button */}
       <TouchableOpacity
         style={[styles.fab, { backgroundColor: colors.primary }]}
-        onPress={() => console.log('Add transaction')}
+        onPress={() => router.push('/add-transaction')}
         activeOpacity={0.8}
       >
         <Ionicons name='add' size={24} color={colors.onPrimary} />
