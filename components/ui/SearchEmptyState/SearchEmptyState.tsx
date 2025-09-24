@@ -55,16 +55,16 @@ export const SearchEmptyState = ({
       </View>
 
       <Text
-        variant="titleLarge"
-        color="primary"
+        variant='titleLarge'
+        color='primary'
         style={[styles.title, { color: colors.onSurface }]}
       >
         {content.title}
       </Text>
 
       <Text
-        variant="bodyMedium"
-        color="secondary"
+        variant='bodyMedium'
+        color='secondary'
         style={[styles.description, { color: colors.textSecondary }]}
       >
         {content.description}
@@ -77,8 +77,8 @@ export const SearchEmptyState = ({
           activeOpacity={0.7}
         >
           <Text
-            variant="bodyMedium"
-            color="onPrimary"
+            variant='bodyMedium'
+            color='onPrimary'
             style={[styles.actionText, { color: colors.onPrimary }]}
           >
             {content.actionText}

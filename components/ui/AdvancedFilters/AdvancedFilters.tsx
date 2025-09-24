@@ -24,10 +24,10 @@ const CATEGORY_OPTIONS: CategoryOption[] = [
 
 const FilterSection: React.FC<FilterSectionProps> = ({ title, children, style }) => {
   const { colors } = useTheme();
-  
+
   return (
     <View style={[styles.section, style]}>
-      <Text variant="bodyLarge" color="primary" style={styles.sectionTitle}>
+      <Text variant='bodyLarge' color='primary' style={styles.sectionTitle}>
         {title}
       </Text>
       {children}
@@ -50,9 +50,9 @@ export const AdvancedFilters: React.FC<AdvancedFiltersProps> = ({
   };
 
   const handleCategoryChange = (category: string) => {
-    setTempFilters(prev => ({ 
-      ...prev, 
-      category: category === 'all' ? undefined : category 
+    setTempFilters(prev => ({
+      ...prev,
+      category: category === 'all' ? undefined : category,
     }));
   };
 
@@ -69,31 +69,26 @@ export const AdvancedFilters: React.FC<AdvancedFiltersProps> = ({
   };
 
   return (
-    <Modal
-      visible={isVisible}
-      transparent
-      animationType="slide"
-      onRequestClose={onClose}
-    >
+    <Modal visible={isVisible} transparent animationType='slide' onRequestClose={onClose}>
       <TouchableWithoutFeedback onPress={onClose}>
         <View style={styles.overlay}>
           <TouchableWithoutFeedback>
             <View style={[styles.container, { backgroundColor: colors.surface }, style]}>
               <View style={styles.header}>
-                <Text variant="headlineSmall" color="primary" style={styles.title}>
+                <Text variant='headlineSmall' color='primary' style={styles.title}>
                   Advanced Filters
                 </Text>
                 <TouchableOpacity
                   style={[styles.closeButton, { backgroundColor: colors.surfaceVariant }]}
                   onPress={onClose}
                 >
-                  <Ionicons name="close" size={20} color={colors.onSurface} />
+                  <Ionicons name='close' size={20} color={colors.onSurface} />
                 </TouchableOpacity>
               </View>
 
-              <FilterSection title="Time Period">
+              <FilterSection title='Time Period'>
                 <View style={styles.periodContainer}>
-                  {PERIOD_OPTIONS.map((option) => {
+                  {PERIOD_OPTIONS.map(option => {
                     const isSelected = tempFilters.period === option.value;
                     return (
                       <TouchableOpacity
@@ -110,7 +105,7 @@ export const AdvancedFilters: React.FC<AdvancedFiltersProps> = ({
                         activeOpacity={0.7}
                       >
                         <Text
-                          variant="bodyMedium"
+                          variant='bodyMedium'
                           color={isSelected ? 'onPrimary' : 'primary'}
                           style={styles.periodText}
                         >
@@ -122,10 +117,11 @@ export const AdvancedFilters: React.FC<AdvancedFiltersProps> = ({
                 </View>
               </FilterSection>
 
-              <FilterSection title="Categories">
+              <FilterSection title='Categories'>
                 <View style={styles.categoryGrid}>
-                  {CATEGORY_OPTIONS.map((category) => {
-                    const isSelected = tempFilters.category === category.value || 
+                  {CATEGORY_OPTIONS.map(category => {
+                    const isSelected =
+                      tempFilters.category === category.value ||
                       (category.value === 'all' && !tempFilters.category);
                     return (
                       <TouchableOpacity
@@ -143,12 +139,17 @@ export const AdvancedFilters: React.FC<AdvancedFiltersProps> = ({
                       >
                         <View
                           style={[
-                            { width: 12, height: 12, borderRadius: 6, backgroundColor: category.color },
-                            isSelected && { backgroundColor: colors.onPrimary }
+                            {
+                              width: 12,
+                              height: 12,
+                              borderRadius: 6,
+                              backgroundColor: category.color,
+                            },
+                            isSelected && { backgroundColor: colors.onPrimary },
                           ]}
                         />
                         <Text
-                          variant="bodyMedium"
+                          variant='bodyMedium'
                           color={isSelected ? 'onPrimary' : 'primary'}
                           style={styles.categoryText}
                         >
@@ -162,35 +163,23 @@ export const AdvancedFilters: React.FC<AdvancedFiltersProps> = ({
 
               <View style={styles.actions}>
                 <TouchableOpacity
-                  style={[
-                    styles.actionButton,
-                    styles.clearButton,
-                    { borderColor: colors.outline }
-                  ]}
+                  style={[styles.actionButton, styles.clearButton, { borderColor: colors.outline }]}
                   onPress={handleClearFilters}
                 >
-                  <Text
-                    variant="bodyLarge"
-                    color="primary"
-                    style={styles.actionButtonText}
-                  >
+                  <Text variant='bodyLarge' color='primary' style={styles.actionButtonText}>
                     Clear All
                   </Text>
                 </TouchableOpacity>
-                
+
                 <TouchableOpacity
                   style={[
                     styles.actionButton,
                     styles.applyButton,
-                    { backgroundColor: colors.primary }
+                    { backgroundColor: colors.primary },
                   ]}
                   onPress={handleApplyFilters}
                 >
-                  <Text
-                    variant="bodyLarge"
-                    color="onPrimary"
-                    style={styles.actionButtonText}
-                  >
+                  <Text variant='bodyLarge' color='onPrimary' style={styles.actionButtonText}>
                     Apply Filters
                   </Text>
                 </TouchableOpacity>

@@ -1,12 +1,7 @@
 import { useTheme } from '@/contexts/ThemeContext';
 import { Ionicons } from '@expo/vector-icons';
 import React, { forwardRef } from 'react';
-import {
-    TextInput as RNTextInput,
-    StyleSheet,
-    TouchableOpacity,
-    View,
-} from 'react-native';
+import { TextInput as RNTextInput, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { Text } from '../Text/Text';
 import { TextInputProps } from './types';
 
@@ -67,7 +62,7 @@ export const TextInput = forwardRef<RNTextInput, TextInputProps>(
     return (
       <View style={styles.wrapper}>
         {label && (
-          <Text variant="bodyMedium" color="primary" style={styles.label}>
+          <Text variant='bodyMedium' color='primary' style={styles.label}>
             {label}
           </Text>
         )}
@@ -113,7 +108,7 @@ export const TextInput = forwardRef<RNTextInput, TextInputProps>(
           )}
         </View>
         {error && (
-          <Text variant="bodySmall" color="error" style={styles.errorText}>
+          <Text variant='bodySmall' color='error' style={styles.errorText}>
             {error}
           </Text>
         )}

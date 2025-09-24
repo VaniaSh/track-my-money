@@ -35,65 +35,61 @@ export const FilterModal: React.FC = () => {
     <Modal
       visible={isFilterModalVisible}
       transparent
-      animationType="slide"
+      animationType='slide'
       onRequestClose={hideFilterModal}
     >
       <View style={styles.overlay}>
-        <TouchableOpacity
-          style={styles.backdrop}
-          activeOpacity={1}
-          onPress={hideFilterModal}
-        />
+        <TouchableOpacity style={styles.backdrop} activeOpacity={1} onPress={hideFilterModal} />
         <Animated.View style={[styles.modal, { backgroundColor: colors.surface }]}>
           <View style={styles.header}>
-            <Text variant="headlineSmall" color="primary" style={styles.title}>
+            <Text variant='headlineSmall' color='primary' style={styles.title}>
               Filter Analytics
             </Text>
             <TouchableOpacity
               style={[styles.closeButton, { backgroundColor: colors.surfaceVariant }]}
               onPress={hideFilterModal}
             >
-              <Ionicons name="close" size={20} color={colors.onSurfaceVariant} />
+              <Ionicons name='close' size={20} color={colors.onSurfaceVariant} />
             </TouchableOpacity>
           </View>
 
           <View style={styles.content}>
             <View style={styles.section}>
-              <Text variant="titleMedium" color="primary" style={styles.sectionTitle}>
+              <Text variant='titleMedium' color='primary' style={styles.sectionTitle}>
                 Time Period
               </Text>
               <View style={styles.optionsContainer}>
-                {timePeriodOptions.map((option) => (
+                {timePeriodOptions.map(option => (
                   <TouchableOpacity
                     key={option.value}
                     style={[
                       styles.option,
                       {
-                        backgroundColor: filters.period === option.value 
-                          ? colors.primary + '20' 
-                          : colors.surfaceVariant,
-                        borderColor: filters.period === option.value 
-                          ? colors.primary 
-                          : colors.outline,
-                      }
+                        backgroundColor:
+                          filters.period === option.value
+                            ? colors.primary + '20'
+                            : colors.surfaceVariant,
+                        borderColor:
+                          filters.period === option.value ? colors.primary : colors.outline,
+                      },
                     ]}
                     onPress={() => handlePeriodSelect(option.value)}
                   >
                     <Text
-                      variant="bodyMedium"
+                      variant='bodyMedium'
                       color={filters.period === option.value ? 'primary' : 'secondary'}
                       style={[
                         styles.optionText,
-                        filters.period === option.value && styles.selectedOptionText
+                        filters.period === option.value && styles.selectedOptionText,
                       ]}
                     >
                       {option.label}
                     </Text>
                     {filters.period === option.value && (
-                      <Ionicons 
-                        name="checkmark" 
-                        size={16} 
-                        color={colors.primary} 
+                      <Ionicons
+                        name='checkmark'
+                        size={16}
+                        color={colors.primary}
                         style={styles.checkIcon}
                       />
                     )}
@@ -105,14 +101,14 @@ export const FilterModal: React.FC = () => {
 
           <View style={styles.footer}>
             <Button
-              title="Reset"
-              variant="outline"
+              title='Reset'
+              variant='outline'
               onPress={handleReset}
               style={styles.resetButton}
             />
             <Button
-              title="Apply Filters"
-              variant="primary"
+              title='Apply Filters'
+              variant='primary'
               onPress={handleApply}
               style={styles.applyButton}
             />

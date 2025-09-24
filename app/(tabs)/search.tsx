@@ -2,15 +2,13 @@ import {
   CategoryFilter,
   SearchEmptyState,
   SearchInput,
-  Text,
   TransactionSectionList,
 } from '@/components/ui';
 import { Transaction } from '@/components/ui/TransactionItem/types';
 import { useTheme } from '@/contexts/ThemeContext';
 import { mockCategories, mockTransactions } from '@/data/mockTransactions';
-import { Ionicons } from '@expo/vector-icons';
 import React, { useMemo, useState } from 'react';
-import { Alert, SafeAreaView, View } from 'react-native';
+import { Alert, View } from 'react-native';
 import { styles } from './styles';
 
 const SearchScreen = () => {
@@ -19,11 +17,9 @@ const SearchScreen = () => {
   const [selectedCategories, setSelectedCategories] = useState<string[]>(['all']);
   const [refreshing, setRefreshing] = useState(false);
 
-  // Filter transactions based on search query and selected categories
   const filteredTransactions = useMemo(() => {
     let filtered = mockTransactions;
 
-    // Filter by search query
     if (searchQuery.trim()) {
       const query = searchQuery.toLowerCase();
       filtered = filtered.filter(
@@ -33,7 +29,6 @@ const SearchScreen = () => {
       );
     }
 
-    // Filter by selected categories
     if (!selectedCategories.includes('all')) {
       filtered = filtered.filter(transaction => selectedCategories.includes(transaction.category));
     }
@@ -41,19 +36,17 @@ const SearchScreen = () => {
     return filtered;
   }, [searchQuery, selectedCategories]);
 
-  // Group transactions by date
   const groupedTransactions = useMemo(() => {
     const groups: { [key: string]: Transaction[] } = {};
 
     filteredTransactions.forEach(transaction => {
-      const date = transaction.date.split('T')[0]; // Get YYYY-MM-DD part
+      const date = transaction.date.split('T')[0];
       if (!groups[date]) {
         groups[date] = [];
       }
       groups[date].push(transaction);
     });
 
-    // Convert to array and sort by date (newest first)
     return Object.entries(groups)
       .sort(([a], [b]) => new Date(b).getTime() - new Date(a).getTime())
       .map(([date, transactions]) => ({
@@ -108,7 +101,6 @@ const SearchScreen = () => {
 
   const handleRefresh = () => {
     setRefreshing(true);
-    // Simulate API call
     setTimeout(() => {
       setRefreshing(false);
     }, 1000);

@@ -5,7 +5,7 @@ export const mockTransactions: Transaction[] = [
   {
     id: '1',
     description: 'Coffee at Starbucks',
-    amount: -4.50,
+    amount: -4.5,
     category: 'food',
     date: '2024-01-15T08:30:00Z',
     type: 'expense',
@@ -13,7 +13,7 @@ export const mockTransactions: Transaction[] = [
   {
     id: '2',
     description: 'Salary payment',
-    amount: 3000.00,
+    amount: 3000.0,
     category: 'income',
     date: '2024-01-15T09:00:00Z',
     type: 'income',
@@ -29,7 +29,7 @@ export const mockTransactions: Transaction[] = [
   {
     id: '4',
     description: 'Grocery shopping at Whole Foods',
-    amount: -85.30,
+    amount: -85.3,
     category: 'food',
     date: '2024-01-14T18:45:00Z',
     type: 'expense',
@@ -45,7 +45,7 @@ export const mockTransactions: Transaction[] = [
   {
     id: '6',
     description: 'Gas station fill-up',
-    amount: -45.20,
+    amount: -45.2,
     category: 'transportation',
     date: '2024-01-13T16:30:00Z',
     type: 'expense',
@@ -53,7 +53,7 @@ export const mockTransactions: Transaction[] = [
   {
     id: '7',
     description: 'Freelance project payment',
-    amount: 500.00,
+    amount: 500.0,
     category: 'income',
     date: '2024-01-13T14:00:00Z',
     type: 'income',
@@ -61,7 +61,7 @@ export const mockTransactions: Transaction[] = [
   {
     id: '8',
     description: 'Dentist appointment',
-    amount: -150.00,
+    amount: -150.0,
     category: 'healthcare',
     date: '2024-01-12T10:30:00Z',
     type: 'expense',
@@ -77,7 +77,7 @@ export const mockTransactions: Transaction[] = [
   {
     id: '10',
     description: 'Electricity bill',
-    amount: -78.90,
+    amount: -78.9,
     category: 'utilities',
     date: '2024-01-11T00:00:00Z',
     type: 'expense',
@@ -85,7 +85,7 @@ export const mockTransactions: Transaction[] = [
   {
     id: '11',
     description: 'Lunch with colleagues',
-    amount: -18.50,
+    amount: -18.5,
     category: 'food',
     date: '2024-01-11T13:00:00Z',
     type: 'expense',
@@ -93,7 +93,7 @@ export const mockTransactions: Transaction[] = [
   {
     id: '12',
     description: 'Movie tickets',
-    amount: -24.00,
+    amount: -24.0,
     category: 'entertainment',
     date: '2024-01-10T19:30:00Z',
     type: 'expense',
@@ -109,7 +109,7 @@ export const mockTransactions: Transaction[] = [
   {
     id: '14',
     description: 'Taxi to airport',
-    amount: -35.00,
+    amount: -35.0,
     category: 'transportation',
     date: '2024-01-09T06:00:00Z',
     type: 'expense',
@@ -117,7 +117,7 @@ export const mockTransactions: Transaction[] = [
   {
     id: '15',
     description: 'Flight to New York',
-    amount: -450.00,
+    amount: -450.0,
     category: 'travel',
     date: '2024-01-09T08:00:00Z',
     type: 'expense',

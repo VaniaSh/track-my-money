@@ -50,15 +50,18 @@ export default function TabLayout() {
           options={{
             title: 'Analytics',
             tabBarIcon: ({ color, focused }) => (
-              <Ionicons name={focused ? 'analytics' : 'analytics-outline'} size={20} color={color} />
+              <Ionicons
+                name={focused ? 'analytics' : 'analytics-outline'}
+                size={20}
+                color={color}
+              />
             ),
             header: () => (
-              <Header 
-                title='Analytics' 
-                showProfileButton 
+              <Header
+                title='Analytics'
                 rightAction={{
                   icon: 'filter',
-                  onPress: () => {}, // No action for now
+                  onPress: () => {},
                 }}
               />
             ),

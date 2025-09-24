@@ -25,8 +25,11 @@ export const CategoryFilter = ({
 
   const isSelected = (categoryId: string) => selectedCategories.includes(categoryId);
 
-  const allCategories = showAllOption 
-    ? [{ id: 'all', name: 'All', icon: 'apps-outline' as const, color: colors.primary }, ...categories]
+  const allCategories = showAllOption
+    ? [
+        { id: 'all', name: 'All', icon: 'apps-outline' as const, color: colors.primary },
+        ...categories,
+      ]
     : categories;
 
   return (
@@ -36,7 +39,7 @@ export const CategoryFilter = ({
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={styles.scrollContent}
       >
-        {allCategories.map((category) => {
+        {allCategories.map(category => {
           const selected = isSelected(category.id);
           return (
             <TouchableOpacity

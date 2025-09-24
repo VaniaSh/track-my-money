@@ -41,7 +41,72 @@ const Home = () => {
   const { colors } = useTheme();
   const router = useRouter();
   const [balance] = useState(8000);
-  const [recentTransactions] = useState<Transaction[]>([]);
+  const [recentTransactions] = useState<Transaction[]>([
+    {
+      id: '1',
+      title: 'Coffee at Starbucks',
+      amount: -4.5,
+      type: 'expense',
+      category: 'Food',
+      date: 'Today, 8:30 AM',
+    },
+    {
+      id: '2',
+      title: 'Salary payment',
+      amount: 3000.0,
+      type: 'income',
+      category: 'Income',
+      date: 'Today, 9:00 AM',
+    },
+    {
+      id: '3',
+      title: 'Uber ride to work',
+      amount: -12.75,
+      type: 'expense',
+      category: 'Transportation',
+      date: 'Today, 8:00 AM',
+    },
+    {
+      id: '4',
+      title: 'Grocery shopping at Whole Foods',
+      amount: -85.3,
+      type: 'expense',
+      category: 'Food',
+      date: 'Yesterday, 6:45 PM',
+    },
+    {
+      id: '5',
+      title: 'Netflix subscription',
+      amount: -15.99,
+      type: 'expense',
+      category: 'Entertainment',
+      date: 'Yesterday, 12:00 AM',
+    },
+    {
+      id: '6',
+      title: 'Gas station fill-up',
+      amount: -45.2,
+      type: 'expense',
+      category: 'Transportation',
+      date: 'Jan 13, 4:30 PM',
+    },
+    {
+      id: '7',
+      title: 'Freelance project payment',
+      amount: 500.0,
+      type: 'income',
+      category: 'Income',
+      date: 'Jan 13, 2:00 PM',
+    },
+    {
+      id: '8',
+      title: 'Dentist appointment',
+      amount: -150.0,
+      type: 'expense',
+      category: 'Healthcare',
+      date: 'Jan 12, 10:30 AM',
+    },
+  ]);
 
   const formatCurrency = (amount: number) => {
     return new Intl.NumberFormat('en-US', {

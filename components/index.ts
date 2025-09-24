@@ -19,4 +19,3 @@ export * from './ui/Reward/types';
 export * from './ui/Text/types';
 export * from './ui/TextInput/types';
 export * from './ui/ThemeToggle/types';
-

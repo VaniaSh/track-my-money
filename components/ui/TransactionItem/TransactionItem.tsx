@@ -75,48 +75,31 @@ export const TransactionItem = ({
             color={isIncome ? colors.success : colors.error}
           />
         </View>
-        
+
         <View style={styles.textContent}>
-          <Text
-            variant="bodyLarge"
-            color="primary"
-            numberOfLines={1}
-            style={styles.title}
-          >
+          <Text variant='bodyLarge' color='primary' numberOfLines={1} style={styles.title}>
             {transaction.description}
           </Text>
-          
+
           {showCategory && (
-            <Text
-              variant="bodySmall"
-              color="secondary"
-              numberOfLines={1}
-              style={styles.category}
-            >
+            <Text variant='bodySmall' color='secondary' numberOfLines={1} style={styles.category}>
               {transaction.category}
             </Text>
           )}
-          
+
           {showDate && (
-            <Text
-              variant="bodySmall"
-              color="tertiary"
-              style={styles.date}
-            >
+            <Text variant='bodySmall' color='tertiary' style={styles.date}>
               {formatDate(transaction.date)}
             </Text>
           )}
         </View>
       </View>
-      
+
       <View style={styles.rightContent}>
         <Text
-          variant="bodyLarge"
+          variant='bodyLarge'
           color={isIncome ? 'success' : 'error'}
-          style={[
-            styles.amount,
-            { color: isIncome ? colors.success : colors.error },
-          ]}
+          style={[styles.amount, { color: isIncome ? colors.success : colors.error }]}
         >
           {formatAmount(transaction.amount)}
         </Text>

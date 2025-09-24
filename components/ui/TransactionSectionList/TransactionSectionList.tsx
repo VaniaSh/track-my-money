@@ -38,7 +38,11 @@ export const TransactionSectionList = ({
     }
   };
 
-  const renderSectionHeader = ({ section }: { section: { title: string; data: Transaction[] } }) => (
+  const renderSectionHeader = ({
+    section,
+  }: {
+    section: { title: string; data: Transaction[] };
+  }) => (
     <View
       style={[
         styles.sectionHeader,
@@ -49,15 +53,15 @@ export const TransactionSectionList = ({
       ]}
     >
       <Text
-        variant="titleMedium"
-        color="primary"
+        variant='titleMedium'
+        color='primary'
         style={[styles.sectionTitle, { color: colors.textSecondary }]}
       >
         {formatSectionDate(section.title)}
       </Text>
       <Text
-        variant="bodySmall"
-        color="secondary"
+        variant='bodySmall'
+        color='secondary'
         style={[styles.sectionSubtitle, { color: colors.textTertiary }]}
       >
         {section.data.length} transaction{section.data.length !== 1 ? 's' : ''}
@@ -77,8 +81,8 @@ export const TransactionSectionList = ({
   const renderEmptyComponent = () => (
     <View style={styles.emptyContainer}>
       <Text
-        variant="bodyLarge"
-        color="secondary"
+        variant='bodyLarge'
+        color='secondary'
         style={[styles.emptyText, { color: colors.textSecondary }]}
       >
         No transactions found
@@ -89,7 +93,7 @@ export const TransactionSectionList = ({
   return (
     <SectionList
       sections={sections}
-      keyExtractor={(item) => item.id}
+      keyExtractor={item => item.id}
       renderItem={renderTransaction}
       renderSectionHeader={renderSectionHeader}
       ListEmptyComponent={renderEmptyComponent}

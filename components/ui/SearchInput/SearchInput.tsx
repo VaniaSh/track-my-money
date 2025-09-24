@@ -2,11 +2,11 @@ import { useTheme } from '@/contexts/ThemeContext';
 import { Ionicons } from '@expo/vector-icons';
 import React, { useState } from 'react';
 import {
-    NativeSyntheticEvent,
-    TextInput,
-    TextInputFocusEventData,
-    TouchableOpacity,
-    View
+  NativeSyntheticEvent,
+  TextInput,
+  TextInputFocusEventData,
+  TouchableOpacity,
+  View,
 } from 'react-native';
 import { styles } from './styles';
 import { SearchInputProps } from './types';
@@ -56,12 +56,12 @@ export const SearchInput = ({
         ]}
       >
         <Ionicons
-          name="search-outline"
+          name='search-outline'
           size={20}
           color={isFocused ? colors.primary : colors.textSecondary}
           style={styles.searchIcon}
         />
-        
+
         <TextInput
           style={[
             styles.textInput,
@@ -76,21 +76,13 @@ export const SearchInput = ({
           onFocus={handleFocus}
           onBlur={handleBlur}
           autoFocus={autoFocus}
-          returnKeyType="search"
+          returnKeyType='search'
           {...textInputProps}
         />
-        
+
         {showClearButton && value && value.length > 0 && (
-          <TouchableOpacity
-            style={styles.clearButton}
-            onPress={handleClear}
-            activeOpacity={0.7}
-          >
-            <Ionicons
-              name="close-circle"
-              size={20}
-              color={colors.textSecondary}
-            />
+          <TouchableOpacity style={styles.clearButton} onPress={handleClear} activeOpacity={0.7}>
+            <Ionicons name='close-circle' size={20} color={colors.textSecondary} />
           </TouchableOpacity>
         )}
       </View>
