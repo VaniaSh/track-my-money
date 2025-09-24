@@ -4,7 +4,7 @@ import { useTheme } from '@/contexts/ThemeContext';
 import { Ionicons } from '@expo/vector-icons';
 import React, { useState } from 'react';
 import { Alert, ScrollView, Text, TouchableOpacity, View } from 'react-native';
-import { styles } from './styles';
+import { styles } from '../../utils/styles/rewardsPageStyles';
 
 const Rewards = () => {
   const { colors } = useTheme();

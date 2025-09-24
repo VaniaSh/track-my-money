@@ -67,7 +67,7 @@ export const FilterModal: React.FC = () => {
                       {
                         backgroundColor:
                           filters.period === option.value
-                            ? colors.primary + '20'
+                            ? `${colors.primary}20`
                             : colors.surfaceVariant,
                         borderColor:
                           filters.period === option.value ? colors.primary : colors.outline,

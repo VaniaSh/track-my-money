@@ -56,15 +56,7 @@ export default function TabLayout() {
                 color={color}
               />
             ),
-            header: () => (
-              <Header
-                title='Analytics'
-                rightAction={{
-                  icon: 'filter',
-                  onPress: () => {},
-                }}
-              />
-            ),
+            header: () => <Header title='Analytics' />,
           }}
         />
       </Tabs>

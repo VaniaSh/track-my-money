@@ -1,11 +1,11 @@
-import { AnalyticsSummary, BarChart, TimePeriodSelector } from '@/components/ui';
-import { useFilter } from '@/contexts/FilterContext';
+import { BarChart, TimePeriodSelector } from '@/components/ui';
+import SummaryCard from '@/components/ui/AnalyticsSummary/AnalyticsSummary';
 import { useTheme } from '@/contexts/ThemeContext';
 import { generateMockData } from '@/utils/analytics';
 import React, { useCallback, useMemo, useState } from 'react';
 import { Animated, RefreshControl, ScrollView, View } from 'react-native';
-import { analyticsStyles } from './analyticsStyles';
-import SummaryCard from '@/components/ui/AnalyticsSummary/AnalyticsSummary';
+import { useFilter } from '../../contexts/FilterContext';
+import { analyticsStyles } from '../../utils/styles/analyticsStyles';
 
 const AnalyticsScreen = () => {
   const { colors } = useTheme();

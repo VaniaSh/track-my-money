@@ -3,7 +3,7 @@ import { ProfileOption } from '@/components/ui/ProfileItem/types';
 import { useTheme } from '@/contexts/ThemeContext';
 import React from 'react';
 import { Alert, ScrollView, Text, View } from 'react-native';
-import { styles } from './styles';
+import { styles } from '../../../utils/styles/settingsStyles';
 
 const SettingsScreen = () => {
   const { colors, toggleTheme, isDark } = useTheme();

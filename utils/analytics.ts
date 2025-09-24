@@ -22,7 +22,7 @@ export const generateMockData = (): BarChartData[] => {
     value: Math.floor(Math.random() * 100) + 20,
     label,
     frontColor: colors[index % colors.length],
-    gradientColor: colors[index % colors.length] + '80',
+    gradientColor: `${colors[index % colors.length]}80`,
   }));
 };
 

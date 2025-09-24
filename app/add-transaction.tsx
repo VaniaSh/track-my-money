@@ -16,7 +16,7 @@ import Animated, { FadeInDown, FadeInUp } from 'react-native-reanimated';
 
 import { Button, Card, Text, TextInput } from '@/components';
 import { useTheme } from '@/contexts/ThemeContext';
-import { AddTransactionFormData, PaymentMethod } from './types/AddTransactionTypes';
+import { AddTransactionFormData, PaymentMethod } from '../types/addTransactionTypes';
 
 // Design system constants
 const borderRadius = {

@@ -2,7 +2,7 @@ import { useTheme } from '@/contexts/ThemeContext';
 import { Ionicons } from '@expo/vector-icons';
 import React, { useState } from 'react';
 import { Alert, ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native';
-import { styles } from '../styles';
+import { styles } from '../../../utils/styles/editProfileStyles';
 
 const EditProfileScreen = () => {
   const { colors } = useTheme();

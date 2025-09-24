@@ -9,7 +9,7 @@ import { useTheme } from '@/contexts/ThemeContext';
 import { mockCategories, mockTransactions } from '@/data/mockTransactions';
 import React, { useMemo, useState } from 'react';
 import { Alert, View } from 'react-native';
-import { styles } from './styles';
+import { styles } from '../../utils/styles/tabsStyles';
 
 const SearchScreen = () => {
   const { colors } = useTheme();

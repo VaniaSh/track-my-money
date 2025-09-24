@@ -1,14 +1,16 @@
-import ProfileItem from '@/components/ui/ProfileItem/ProfileItem';
-import { ProfileOption } from '@/components/ui/ProfileItem/types';
-import { useTheme } from '@/contexts/ThemeContext';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import React from 'react';
 import { Alert, ScrollView, Text, TouchableOpacity, View } from 'react-native';
-import { styles } from './styles';
+import ProfileItem from '../../components/ui/ProfileItem/ProfileItem';
+import { ProfileOption } from '../../components/ui/ProfileItem/types';
+import { useAuth } from '../../contexts/AuthContext';
+import { useTheme } from '../../contexts/ThemeContext';
+import { styles } from '../../utils/styles/profileStyles';
 
 const Profile = () => {
   const { colors, toggleTheme, isDark } = useTheme();
+  const { logout } = useAuth();
   const router = useRouter();
 
   const sampleRewards = [
@@ -154,7 +156,22 @@ const Profile = () => {
         onPress={() =>
           Alert.alert('Logout', 'Are you sure you want to logout?', [
             { text: 'Cancel', style: 'cancel' },
-            { text: 'Logout', style: 'destructive', onPress: () => console.log('Logout') },
+            {
+              text: 'Logout',
+              style: 'destructive',
+              onPress: async () => {
+                try {
+                  const result = await logout();
+                  if (result.success) {
+                    router.replace('/auth/Auth');
+                  } else {
+                    Alert.alert('Error', result.message || 'Failed to logout');
+                  }
+                } catch (error) {
+                  Alert.alert('Error', 'An unexpected error occurred');
+                }
+              },
+            },
           ])
         }
       >

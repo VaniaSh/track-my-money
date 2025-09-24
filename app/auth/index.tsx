@@ -6,7 +6,7 @@ import { Button } from '../../components/ui/Button/Button';
 import { Text } from '../../components/ui/Text/Text';
 import { useTheme } from '../../contexts/ThemeContext';
 
-export default function Auth() {
+export default function AuthIndex() {
   const { colors } = useTheme();
 
   const handleLogin = () => {
@@ -29,30 +29,8 @@ export default function Auth() {
         </Text>
 
         <Text variant='bodyLarge' color='secondary' style={styles.subtitle}>
-          Take control of your finances with our intuitive expense tracking app. Monitor your
-          spending, set budgets, and achieve your financial goals.
+          Take control of your finances with our intuitive expense tracking app
         </Text>
-
-        <View style={styles.features}>
-          <View style={styles.feature}>
-            <Ionicons name='analytics' size={24} color={colors.primary} />
-            <Text variant='bodyMedium' color='primary' style={styles.featureText}>
-              Smart Analytics
-            </Text>
-          </View>
-          <View style={styles.feature}>
-            <Ionicons name='shield-checkmark' size={24} color={colors.primary} />
-            <Text variant='bodyMedium' color='primary' style={styles.featureText}>
-              Secure & Private
-            </Text>
-          </View>
-          <View style={styles.feature}>
-            <Ionicons name='trending-up' size={24} color={colors.primary} />
-            <Text variant='bodyMedium' color='primary' style={styles.featureText}>
-              Track Progress
-            </Text>
-          </View>
-        </View>
 
         <View style={styles.buttonContainer}>
           <Button
@@ -107,23 +85,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     textAlign: 'center',
     lineHeight: 26,
-    marginBottom: 40,
-  },
-  features: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    width: '100%',
     marginBottom: 48,
-  },
-  feature: {
-    alignItems: 'center',
-    flex: 1,
-  },
-  featureText: {
-    marginTop: 8,
-    fontSize: 14,
-    fontWeight: '600',
-    textAlign: 'center',
   },
   buttonContainer: {
     width: '100%',

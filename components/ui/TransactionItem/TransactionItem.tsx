@@ -65,7 +65,7 @@ export const TransactionItem = ({
           style={[
             styles.iconContainer,
             {
-              backgroundColor: isIncome ? colors.success + '20' : colors.error + '20',
+              backgroundColor: isIncome ? `${colors.success}20` : `${colors.error}20`,
             },
           ]}
         >
