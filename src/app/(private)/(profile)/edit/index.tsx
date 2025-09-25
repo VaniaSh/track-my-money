@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { Alert, ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { styles } from './styles'
 
-const EditProfileScreen = () => {
+const Edit = () => {
   const { colors } = useTheme()
   const [formData, setFormData] = useState({
     name: 'John Doe',
@@ -151,4 +151,4 @@ const EditProfileScreen = () => {
   )
 }
 
-export default EditProfileScreen
+export default Edit

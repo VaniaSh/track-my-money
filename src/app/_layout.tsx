@@ -1,20 +1,17 @@
-import { DefaultTheme, ThemeProvider as NavigationThemeProvider } from '@react-navigation/native'
-import { Stack } from 'expo-router'
+import { ThemeProvider } from '@/contexts/ThemeContext'
+import { Slot } from 'expo-router'
 import { StatusBar } from 'expo-status-bar'
 import 'react-native-reanimated'
-import { ThemeProvider } from '../contexts/ThemeContext'
 
+const InitialLayout = () => {
+  return <Slot />
+}
 
-export default function RootLayout() {
+export default function RootLayoutNav() {
   return (
     <ThemeProvider>
-      <NavigationThemeProvider value={DefaultTheme}>
-        <Stack initialRouteName='(app)'>
-          <Stack.Screen name='(auth)' options={{ headerShown: false }} />
-          <Stack.Screen name='(app)' options={{ headerShown: false }} />
-        </Stack>
-        <StatusBar style='auto' />
-      </NavigationThemeProvider>
+      <InitialLayout />
+      <StatusBar style='auto' />
     </ThemeProvider>
   )
 }

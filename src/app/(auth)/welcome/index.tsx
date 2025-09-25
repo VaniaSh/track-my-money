@@ -4,8 +4,9 @@ import { View } from 'react-native'
 import { Button, Text } from '@/components'
 import { useTheme } from '@/contexts/ThemeContext'
 import { styles } from './styles'
+import { Link } from 'expo-router'
 
-export default function Auth() {
+export default function Welcome() {
   const { colors } = useTheme()
 
   return (
@@ -46,9 +47,18 @@ export default function Auth() {
         </View>
 
         <View style={styles.buttonContainer}>
-          <Button title='Get Started' fullWidth size='large' style={styles.button} />
-
-          <Button title='Sign In' variant='outline' fullWidth size='large' style={styles.button} />
+          <Link asChild href={'/(auth)/register'}>
+            <Button title='Get Started' fullWidth size='large' style={styles.button} />
+          </Link>
+          <Link asChild href={'/(auth)/login'}>
+            <Button
+              title='Sign In'
+              variant='outline'
+              fullWidth
+              size='large'
+              style={styles.button}
+            />
+          </Link>
         </View>
       </View>
     </View>

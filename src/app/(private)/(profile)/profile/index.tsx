@@ -54,7 +54,7 @@ const Profile = () => {
       icon: 'person',
       disabled: false,
       type: 'navigation',
-      onPress: () => router.push('/EditPersonalData'),
+      onPress: () => router.push('/(private)/(profile)/edit'),
     },
     {
       id: 'settings',
@@ -63,7 +63,7 @@ const Profile = () => {
       icon: 'settings',
       disabled: false,
       type: 'navigation',
-      onPress: () => router.push('/Settings'),
+      onPress: () => router.push('/(private)/(profile)/settings'),
     },
     {
       id: 'about',
@@ -99,7 +99,7 @@ const Profile = () => {
       <TouchableOpacity
         style={[styles.rewardsSection, { backgroundColor: colors.surface }]}
         onPress={() => {
-          router.push('/Rewards')
+          router.push('/(private)/(profile)/rewards')
         }}
         activeOpacity={0.7}
       >

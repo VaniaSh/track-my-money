@@ -16,7 +16,7 @@ import { useTheme } from '@/contexts/ThemeContext'
 import { styles } from './styles'
 import { LoginFormData, loginSchema } from '@/utils/validationSchemas'
 
-export default function Login() {
+export default function Page() {
   const { colors } = useTheme()
 
   const [showPassword, setShowPassword] = useState(false)
@@ -139,7 +139,7 @@ export default function Login() {
         <View style={styles.footer}>
           <Text variant='bodyMedium' color='secondary' style={styles.footerText}>
             Don&apos;t have an account?{' '}
-            <TouchableOpacity onPress={() => router.push('/(auth)/Register')}>
+            <TouchableOpacity onPress={() => router.push('/(auth)/register')}>
               <Text variant='bodyMedium' color='primary' style={styles.linkText}>
                 Sign Up
               </Text>

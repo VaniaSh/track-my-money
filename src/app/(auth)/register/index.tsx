@@ -9,7 +9,7 @@ import { styles } from './styles'
 import { RegisterFormData, registerSchema } from '@/utils/validationSchemas'
 import { useTheme } from '@/contexts/ThemeContext'
 
-export default function Register() {
+export default function Page() {
   const { colors } = useTheme()
 
   const [showPassword, setShowPassword] = useState(false)

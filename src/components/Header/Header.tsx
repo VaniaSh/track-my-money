@@ -63,7 +63,7 @@ const Header = ({
             {showProfileButton && (
               <AnimatedTouchableOpacity
                 style={[styles.actionButton, animatedStyle]}
-                onPress={() => route.push('/(app)/(profile)')}
+                onPress={() => route.push('/(private)/(profile)/profile')}
                 activeOpacity={0.7}
               >
                 <Ionicons name='person-outline' size={24} color={colors.onPrimary} />

@@ -18,13 +18,13 @@ interface ThemeProviderProps {
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   const systemColorScheme = useNativeColorScheme()
-  const [colorScheme, setColorScheme] = useState<ColorScheme>('light')
+  const [colorScheme, setColorScheme] = useState<ColorScheme>('dark')
 
   useEffect(() => {
     if (systemColorScheme === 'dark') {
       setColorScheme('dark')
     } else {
-      setColorScheme('light')
+      setColorScheme('dark')
     }
   }, [systemColorScheme])
 
