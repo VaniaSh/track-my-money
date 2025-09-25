@@ -1,11 +1,18 @@
 // https://docs.expo.dev/guides/using-eslint/
-const { defineConfig } = require('eslint/config');
-const expoConfig = require('eslint-config-expo/flat');
+const { defineConfig } = require('eslint/config')
+const expoConfig = require('eslint-config-expo/flat')
 
 module.exports = defineConfig([
   expoConfig,
   {
-    ignores: ['dist/*', 'node_modules/*', '.expo/*'],
+    ignores: [
+      'dist/*',
+      'node_modules/*',
+      '.expo/*,',
+      'metro.config.js',
+      'reset-project.js',
+      'eslint.config.js',
+    ],
   },
   {
     files: ['**/*.{js,jsx,ts,tsx}'],
@@ -28,8 +35,7 @@ module.exports = defineConfig([
     },
     rules: {
       // React rules
-      'react/jsx-uses-react': 'off', // Not needed with React 17+
-      'react/react-in-jsx-scope': 'off', // Not needed with React 17+
+      'import/no-named-as-default': 0,
       'react/jsx-uses-vars': 'error',
       'react/jsx-key': 'error',
       'react/jsx-no-duplicate-props': 'error',
@@ -72,4 +78,4 @@ module.exports = defineConfig([
       'prettier/prettier': 'error',
     },
   },
-]);
+])

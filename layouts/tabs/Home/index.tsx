@@ -1,9 +1,9 @@
-import { View } from 'react-native';
+import { View } from 'react-native'
 
-import { styles } from './styles';
+import { styles } from './styles'
 
 const Home = () => {
-  return <View style={styles.container}></View>;
-};
+  return <View style={styles.container}></View>
+}
 
-export default Home;
+export default Home

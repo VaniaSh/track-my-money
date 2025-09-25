@@ -1,6 +1,6 @@
 module.exports = {
   // Basic formatting
-  semi: true,
+  semi: false,
   singleQuote: true,
   quoteProps: 'as-needed',
   trailingComma: 'es5',
@@ -33,4 +33,4 @@ module.exports = {
 
   // Embedded language formatting
   embeddedLanguageFormatting: 'auto',
-};
+}

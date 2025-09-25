@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "894237225748",
+    "project_id": "trackmymoney-c48f5",
+    "storage_bucket": "trackmymoney-c48f5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:894237225748:android:fd1171244dc9ea2455c801",
+        "android_client_info": {
+          "package_name": "com.awensh.trackMyMoney"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTYv2HZaqarZJ7GQuWZK_18MAdbg1LybU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
